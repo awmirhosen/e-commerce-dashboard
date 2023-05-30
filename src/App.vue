@@ -1,5 +1,6 @@
 <template>
   <div class=" bg-dark-custom flex min-h-screen relative" dir="rtl">
+    <div class=""></div>
     <Sidebar />
     <!--  main content-->
     <div class="w-full">
