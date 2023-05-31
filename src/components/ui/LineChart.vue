@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full">
-    <div>
-      <canvas id="myChart"></canvas>
+  <div class="w-full text-center">
+    <div class="w-full text-center flex justify-center">
+      <canvas class="w-full" id="myChart"></canvas>
     </div>
   </div>
   <div class="w-full">
-    <div>
-      <canvas id="myChart2"></canvas>
+    <div class="w-full flex justify-center text-center">
+      <canvas id="myChart2" class="w-full"></canvas>
     </div>
   </div>
 </template>
@@ -24,6 +24,7 @@ const labels = [
   "پنج شنبه",
   "جمعه",
 ]
+
 
 const data = {
   labels: labels,
