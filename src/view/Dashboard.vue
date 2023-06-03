@@ -2,8 +2,8 @@
 
   <div class="w-11/12 mx-auto">
     <!--  dashboard header-->
-    <DashboardHeader/>
-    <p class="text-white text-xl block sm:block text-full text-center mt-6">داشبورد</p>
+    <Header header-text="داشبورد" />
+    <p class="text-white text-xl block sm:block text-full block lg:hidden text-center mt-6">داشبورد</p>
     <!--    dashboard cards-->
     <DashboardCards/>
     <!--    chart-->
@@ -18,9 +18,9 @@
 
 <script setup>
 
-import DashboardHeader from "../components/dashboard/DashboardHeader.vue";
 import DashboardCards from "../components/dashboard/DashboardCards.vue";
 import LineChart from "../components/ui/LineChart.vue";
+import Header from "../components/ui/Header.vue";
 </script>
 
 <style scoped>

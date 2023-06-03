@@ -2,17 +2,18 @@
   <div class="mt-16 text-gray-100">
     <!--      dashboard-->
     <div class=" mr-10 flex cursor-pointer transition-all hover:text-green-500">
-      <div class="flex gap-4">
-        <i>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-               stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z"/>
-          </svg>
-        </i>
-        <p>داشبورد</p>
-      </div>
-
+      <RouterLink to="/" active-class="text-green-500">
+        <div class="flex gap-4">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z"/>
+            </svg>
+          </i>
+          <p>داشبورد</p>
+        </div>
+      </RouterLink>
     </div>
     <hr class="mt-4 border-zinc-800">
     <!--        users item of menu -->
@@ -39,6 +40,7 @@
       <!--        submenu items-->
       <transition>
         <div class="flex-col mt-4 text-sm mr-1 text-gray-400" v-if="usersItemFlag">
+          <RouterLink to="users" active-class="text-green-500">
           <div class="flex gap-4 hover:text-green-500 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd"
@@ -47,6 +49,7 @@
             </svg>
             <p>لیست کاربران</p>
           </div>
+          </RouterLink>
           <div class="flex gap-4 mt-2 hover:text-green-500 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd"
@@ -123,17 +126,37 @@
     </div>
     <hr class="mt-4 border-zinc-800">
     <!--      logout-->
-    <div class=" mr-10 mt-4 text-orange-500 flex cursor-pointer transition-all hover:text-orange-700">
-      <div class="flex gap-4">
-        <i>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-            <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M19 10a.75.75 0 00-.75-.75H8.704l1.048-.943a.75.75 0 10-1.004-1.114l-2.5 2.25a.75.75 0 000 1.114l2.5 2.25a.75.75 0 101.004-1.114l-1.048-.943h9.546A.75.75 0 0019 10z" clip-rule="evenodd" />
-          </svg>
-        </i>
-        <p>خروج از حساب</p>
+    <div class=" mr-10 flex mt-4 hover:text-orange-700 text-orange-600 flex-col">
+      <div class="flex gap-4 justify-between w-full items-center cursor-pointer" @click="logoutModal">
+        <div class="flex gap-4">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M19 10a.75.75 0 00-.75-.75H8.704l1.048-.943a.75.75 0 10-1.004-1.114l-2.5 2.25a.75.75 0 000 1.114l2.5 2.25a.75.75 0 101.004-1.114l-1.048-.943h9.546A.75.75 0 0019 10z" clip-rule="evenodd" />
+            </svg>
+          </i>
+          <p>خروج از حساب</p>
+        </div>
       </div>
+      <!--        submenu items-->
+      <transition>
+        <div class="flex-col mt-4 text-sm mr-1 text-gray-400" v-if="logoutFlag">
+          <div class="flex gap-4 hover:text-zinc-100 text-zinc-300 cursor-pointer" @click="cancelLogout">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l6-6m0 0l6 6m-6-6v12a6 6 0 01-12 0v-3" />
+            </svg>
 
+            <p>انصراف</p>
+          </div>
+          <div class="flex gap-4 mt-2 text-orange-300 hover:text-orange-400 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002" />
+            </svg>
+
+            <p>خروج از حساب</p>
+          </div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -142,12 +165,19 @@
 
 
 import {ref} from "vue";
-// items flag for oppening and closing users item
+import {useUiStore} from "../../store/ui.js";
+import {useRouter} from "vue-router"
+
+// refs
+
+
+const router = useRouter()
+
+// items flag for opening and closing users item
 const usersItemFlag = ref(false)
 const usersItemDropdown = ref(null);
 // users toggle function
 const usersSidebarToggle = () => {
-  console.log(usersItemDropdown.value.style);
   if (usersItemFlag.value === true) {
     usersItemFlag.value = false;
     usersItemDropdown.value.style.transform = "rotateZ(0deg)"
@@ -158,13 +188,19 @@ const usersSidebarToggle = () => {
     usersItemDropdown.value.style.transform = "rotateZ(180deg)"
   }
 }
+// go to users page
+const showUsersPage = (e) => {
+  e.target.classList.add("text-green-500")
+  router.push("/users")
+}
 
-// items flag for oppening and closing product item
+const uiStore = useUiStore();
+
+// items flag for product and closing product item
 const ProducstItemFlag = ref(false)
 const ProductsItemDropdown = ref(null);
-// users toggle function
+// product toggle function
 const productSidebarToggle = () => {
-  console.log(ProductsItemDropdown.value.style);
   if (ProducstItemFlag.value === true) {
     ProducstItemFlag.value = false;
     ProductsItemDropdown.value.style.transform = "rotateZ(0deg)"
@@ -174,6 +210,15 @@ const productSidebarToggle = () => {
     ProducstItemFlag.value = true;
     ProductsItemDropdown.value.style.transform = "rotateZ(180deg)"
   }
+}
+
+// logout functions
+const logoutFlag = ref(false);
+const cancelLogout = () => {
+  logoutFlag.value = false;
+}
+const logoutModal = () => {
+  logoutFlag.value = true;
 }
 
 </script>

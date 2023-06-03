@@ -17,4 +17,8 @@
 
 <style scoped>
 
+input:focus{
+  outline: none;
+}
+
 </style>

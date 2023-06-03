@@ -1,5 +1,12 @@
 <template>
   <div class=" bg-dark-custom flex min-h-screen relative" dir="rtl">
+    <div class="fixed top-0 w-full h-full bg-red-500 z-20 bg-zinc-900/[.4] flex justify-center items-center">
+      <div class="w-96 h-96 bg-dark-custom-sidebar border border-zinc-800 rounded-md">
+        <div class="flex justify-between">
+          <p>افزودن کاربر</p>
+        </div>
+      </div>
+    </div>
     <!--    sidebar icon-->
     <SidebarIcon/>
     <!--    main sidebar-->
@@ -8,7 +15,6 @@
     <div class="w-full">
       <!--    header-->
       <RouterView></RouterView>
-      <!--    content-->
     </div>
   </div>
 </template>

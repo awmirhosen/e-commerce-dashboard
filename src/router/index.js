@@ -15,6 +15,12 @@ routes:[
         name: "users",
         component: import("../view/users/Users.vue")
     },
+    // add users
+    {
+        path: "/users/add",
+        name: "addUsers",
+        component: import("../view/users/AddUsers.vue")
+    },
 
 ]
 })

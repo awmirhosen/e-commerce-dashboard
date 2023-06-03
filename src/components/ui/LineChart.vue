@@ -30,7 +30,7 @@ const data = {
   labels: labels,
   datasets: [{
     label: "مقدار فروش",
-    // backgroundColor: "rgb(196,65,20)",
+    backgroundColor: "rgb(196,65,20)",
     borderColor: "rgb(196,65,20)",
     data: [0, 10, 5, 22, 30, 12, 43],
   }]
@@ -40,7 +40,7 @@ const data1 = {
   labels: labels,
   datasets: [{
     label: "مقدار فروش",
-    // backgroundColor: "rgb(196,65,20)",
+    backgroundColor: "rgb(13,179,231)",
     borderColor: "rgb(13,179,231)",
     data: [150, 150, 150, 150, 150, 150, 150],
   }]
