@@ -1,11 +1,8 @@
 <template>
   <div class=" bg-dark-custom flex min-h-screen relative" dir="rtl">
-    <div class="fixed top-0 w-full h-full bg-red-500 z-20 bg-zinc-900/[.4] flex justify-center items-center">
-      <div class="w-96 h-96 bg-dark-custom-sidebar border border-zinc-800 rounded-md">
-        <div class="flex justify-between">
-          <p>افزودن کاربر</p>
-        </div>
-      </div>
+    <!--    modal background-->
+    <div class="fixed transition-all top-0 w-full h-full bg-red-500 z-20 bg-zinc-900/[.4] flex justify-center items-center" v-if="uiStore.modalFlag">
+      <SmallModal />
     </div>
     <!--    sidebar icon-->
     <SidebarIcon/>
@@ -24,6 +21,7 @@
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import SidebarIcon from "./components/ui/SidebarIcon.vue";
 import {useUiStore} from "./store/ui.js";
+import SmallModal from "./components/ui/SmallModal.vue";
 
 const uiStore = useUiStore();
 

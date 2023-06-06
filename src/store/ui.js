@@ -5,8 +5,12 @@ export const useUiStore = defineStore("ui", {
     state: () => {
         return {
             sidebarFlag : true,
+            // modal flag
+            modalFlag: false,
             // for logging out of account modal
             logoutModalFlag: false,
+            // user modal flag
+            userModalFlag: false,
         }
     },
     actions: {
